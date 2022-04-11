@@ -29,7 +29,8 @@ class _HomeState extends State<Home> {
         ],
       ),
       body: Center(
-        child: Text(uid),
+        child: Text("otp verification done"),
+        //child: Text(uid),
       ),
     );
   }
