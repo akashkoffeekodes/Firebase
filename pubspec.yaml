@@ -43,7 +43,8 @@ dependencies:
   pinput: ^1.2.2
   email_auth: ^1.0.0
   flutter_login_facebook: ^1.4.0+1
-  twitter_login: ^4.0.1
+  twitter_login: ^4.2.3
+  alt_sms_autofill: ^1.0.0
 
 
 
