@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:alt_sms_autofill/alt_sms_autofill.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -8,6 +10,10 @@ import 'mobilehome.dart';
 
 
 class LoginScreen extends StatefulWidget {
+
+  final Duration timerTastoPremuto;
+
+  const LoginScreen({Key key, this.timerTastoPremuto}) : super(key: key);
   @override
   _LoginScreenState createState() => _LoginScreenState();
 }
@@ -28,8 +34,6 @@ class _LoginScreenState extends State<LoginScreen> {
     ),
   );
 
-
-
   Future<void> initSmsListener() async {
     String commingSms;
     try {
@@ -42,7 +46,7 @@ class _LoginScreenState extends State<LoginScreen> {
     setState(() {
       _commingSms = commingSms;
       if(_commingSms != null || _commingSms != "" ){
-        _controller.text = _commingSms.substring(0,6);
+        _pinPutController.text = _commingSms.substring(0,6);
       }
 
     });
@@ -52,7 +56,38 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   void dispose() {
     AltSmsAutofill().unregisterListener();
+    _timer.cancel();
     super.dispose();
+  }
+
+  final _maxSeconds = 61;
+  int _currentSecond = 0;
+  Timer _timer;
+
+  String get _timerText {
+    final secondsPerMinute = 60;
+    final secondsLeft = _maxSeconds - _currentSecond;
+
+    final formattedMinutesLeft =
+    (secondsLeft ~/ secondsPerMinute).toString().padLeft(2, '0');
+    final formattedSecondsLeft =
+    (secondsLeft % secondsPerMinute).toString().padLeft(2, '0');
+
+    print('$formattedMinutesLeft : $formattedSecondsLeft');
+    return '$formattedMinutesLeft : $formattedSecondsLeft';
+  }
+
+
+
+
+  void _startTimer() {
+    final duration = Duration(seconds: 1);
+    _timer = Timer.periodic(duration, (Timer timer) {
+      setState(() {
+        _currentSecond = timer.tick;
+        if (timer.tick >= _maxSeconds) timer.cancel();
+      });
+    });
   }
 
 
@@ -92,6 +127,8 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ),
             SizedBox(height: 50,),
+            Text(_timerText,style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25)),
+            SizedBox(height: 20,),
             Padding(
               padding: const EdgeInsets.all(30.0),
               child: PinPut(
@@ -120,21 +157,17 @@ class _LoginScreenState extends State<LoginScreen> {
                     });
                   } catch (e) {
                     FocusScope.of(context).unfocus();
-                    _scaffoldkey.currentState
-                        .showSnackBar(SnackBar(content: Text('invalid OTP')));
+                    _scaffoldkey.currentState.showSnackBar(SnackBar(content: Text('invalid OTP')));
                   }
                 },
               ),
             ),
 
-            Center(
-              child: Text("$_commingSms"),
+            // Center(
+            //   child: Text("$_commingSms"),
+            // ),
 
-            ),
-            TextButton(
-              child: Text('Listen for sms code'),
-              onPressed: initSmsListener,
-            ),
+
 
 
           ]),
@@ -144,6 +177,8 @@ class _LoginScreenState extends State<LoginScreen> {
             child: FlatButton(
               color: Colors.teal,
               onPressed: () {
+                _startTimer();
+                initSmsListener();
                 _verifyPhone();
               },
               child: Text(
@@ -188,4 +223,5 @@ class _LoginScreenState extends State<LoginScreen> {
         },
         timeout: Duration(seconds: 60    ));
   }
+
 }
