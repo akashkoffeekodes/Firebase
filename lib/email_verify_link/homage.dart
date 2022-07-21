@@ -61,6 +61,11 @@ class _Home_page_emailState extends State<Home_page_email> {
           SizedBox(
             height: 30,
           ),
+
+          Text("User Email Verify  $isemailverify"),
+          SizedBox(
+            height: 30,
+          ),
           ElevatedButton(
               onPressed: () async {
                 await FirebaseAuth.instance.signOut();

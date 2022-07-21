@@ -24,7 +24,7 @@ class _Verify_linkState extends State<Verify_link> {
       );
     } on FirebaseAuthException catch (e) {
       print(e);
-      //  UrlUtilsReadOnly.showSnackbar(e.message);
+    ;
     }
   }
 
