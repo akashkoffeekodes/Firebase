@@ -1,14 +1,13 @@
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase/emialverify.dart';
+import 'package:firebase/mobile_otp/emialverify.dart';
 import 'package:firebase/fetch.dart';
 import 'package:firebase/loginhome.dart';
-import 'package:firebase/loginmobile.dart';
+import 'package:firebase/mobile_otp/loginmobile.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-import 'realtime.dart';
 
 class AddDetail extends StatefulWidget {
   String id;
@@ -163,15 +162,7 @@ class _AddDetailState extends State<AddDetail> {
                     );
                   },
                   child: Text("Listdata")),
-              ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => FirebaseRealtimeDemoScreen()),
-                    );
-                  },
-                  child: Text("Real time database")),
+
               ElevatedButton(
                   onPressed: () {
                     Navigator.push(

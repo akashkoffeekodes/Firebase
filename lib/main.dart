@@ -1,6 +1,6 @@
 import 'package:firebase/detail.dart';
 import 'package:firebase/login.dart';
-import 'package:firebase/loginmobile.dart';
+import 'package:firebase/mobile_otp/loginmobile.dart';
 import 'package:firebase/start.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -30,14 +30,14 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.teal,
       ),
-      home:  Verify_link(),
+      home:  LoginScreen(),
 
-      routes: <String,WidgetBuilder>{
-
-        "Login" : (BuildContext context)=>Login(),
-        "SignUp":(BuildContext context)=>SignUp(),
-        "start":(BuildContext context)=>Start(),
-      },
+      // routes: <String,WidgetBuilder>{
+      //
+      //   "Login" : (BuildContext context)=>Login(),
+      //   "SignUp":(BuildContext context)=>SignUp(),
+      //   "start":(BuildContext context)=>Start(),
+      // },
 
     );
   }

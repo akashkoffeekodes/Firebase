@@ -40,11 +40,12 @@ dependencies:
   firebase_auth: ^3.3.5
   google_sign_in: ^5.2.3
   flutter_signin_button: ^1.0.0
-  pinput: ^1.2.2
+  pinput: ^2.2.11
   email_auth: ^1.0.0
   flutter_login_facebook: ^1.4.0+1
   twitter_login: ^4.2.3
   alt_sms_autofill: ^1.0.0
+#  firebase_crashlytics: ^2.8.6
 
 
 

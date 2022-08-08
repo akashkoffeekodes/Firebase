@@ -1,4 +1,4 @@
-import 'package:firebase/loginmobile.dart';
+import 'package:firebase/mobile_otp/loginmobile.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 

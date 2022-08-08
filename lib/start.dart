@@ -1,6 +1,6 @@
 // import 'package:authentification/Start.dart';
-import 'package:firebase/logintiwter.dart';
-import 'package:firebase/loginwithfacebook.dart';
+import 'package:firebase/social_media_login/logintiwter.dart';
+import 'package:firebase/social_media_login/loginwithfacebook.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
