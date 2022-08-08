@@ -1,13 +1,12 @@
-import 'package:firebase/detail.dart';
+import 'package:firebase/crashanalytic/crashanalytic.dart';
 import 'package:firebase/login.dart';
-import 'package:firebase/mobile_otp/loginmobile.dart';
 import 'package:firebase/start.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-
-
-import 'email_verify_link/sendSignInLinkToEmail.dart';
 import 'signup.dart';
+
+
+
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -26,20 +25,21 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Firebase Example',
       theme: ThemeData(
-
-
         primarySwatch: Colors.teal,
       ),
-      home:  LoginScreen(),
+      home:  Crash_anlytic(),
 
-      // routes: <String,WidgetBuilder>{
-      //
-      //   "Login" : (BuildContext context)=>Login(),
-      //   "SignUp":(BuildContext context)=>SignUp(),
-      //   "start":(BuildContext context)=>Start(),
-      // },
+      routes: <String,WidgetBuilder>{
+        "Login" : (BuildContext context)=>Login(),
+        "SignUp":(BuildContext context)=>SignUp(),
+        "start":(BuildContext context)=>Start(),
+      },
 
     );
   }
 }
+
+
+
+
 

@@ -1,4 +1,5 @@
 import 'package:firebase/mobile_otp/loginmobile.dart';
+import 'package:firebase/start.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -22,7 +23,7 @@ class _HomeState extends State<Home> {
               await FirebaseAuth.instance.signOut();
               Navigator.pushAndRemoveUntil(
                   context,
-                  MaterialPageRoute(builder: (context) => LoginScreen()),
+                  MaterialPageRoute(builder: (context) => Start()),
                       (route) => false);
             },
           )

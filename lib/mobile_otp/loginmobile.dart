@@ -261,10 +261,10 @@ class _LoginScreenState extends State<LoginScreen> {
               .signInWithCredential(credential)
               .then((value) async {
             if (value.user != null) {
-              print("Sucessfull Login");
+
               // Navigator.pushAndRemoveUntil(
               //     context,
-              //     MaterialPageRoute(builder: (context) => AddDetail()),
+              //     MaterialPageRoute(builder: (context) => Home()),
               //         (route) => false);
             }
           }).catchError((error) {});
