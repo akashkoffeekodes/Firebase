@@ -82,21 +82,19 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
-              RaisedButton(
+              Padding(
                 padding: EdgeInsets.fromLTRB(70, 10, 70, 10),
-                onPressed: signOut,
-                child: Text('Signout',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.bold)),
-                color: Colors.teal,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20.0),
-                ),
-              ),
+                child: ElevatedButton(
+                  onPressed: signOut,
+                  child: Text('Signout',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.bold)),
 
-            ],
+
+
+              ))],
           ),
         ));
   }

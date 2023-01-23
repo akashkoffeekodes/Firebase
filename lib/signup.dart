@@ -56,7 +56,7 @@ class _SignUpState extends State<SignUp> {
             title: Text('ERROR'),
             content: Text(errormessage),
             actions: <Widget>[
-              FlatButton(
+              ElevatedButton(
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
@@ -120,18 +120,14 @@ class _SignUpState extends State<SignUp> {
                               onSaved: (input) => _password = input),
                         ),
                         SizedBox(height: 20),
-                        RaisedButton(
-                          padding: EdgeInsets.fromLTRB(70, 10, 70, 10),
+                        ElevatedButton(
                           onPressed: signUp,
                           child: Text('SignUp',
                               style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 20.0,
                                   fontWeight: FontWeight.bold)),
-                          color: Colors.teal,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20.0),
-                          ),
+
                         )
                       ],
                     ),

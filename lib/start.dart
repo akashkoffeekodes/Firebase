@@ -80,37 +80,37 @@ class _StartState extends State<Start> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                RaisedButton(
-                    padding: EdgeInsets.only(left: 30, right: 30),
-                    onPressed: navigateToLogin,
-                    child: Text(
-                      'LOGIN',
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
+                Padding(
+                  padding: EdgeInsets.fromLTRB(70, 10, 70, 10),
+                  child: ElevatedButton(
+                      onPressed: navigateToLogin,
+                      child: Text(
+                        'LOGIN',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
                       ),
-                    ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                    color: Colors.teal),
+
+                  ),
+                ),
                 SizedBox(width: 20.0),
-                RaisedButton(
-                    padding: EdgeInsets.only(left: 30, right: 30),
-                    onPressed: navigateToRegister,
-                    child: Text(
-                      'REGISTER',
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
+                Padding(
+                  padding:  EdgeInsets.only(left: 30, right: 30),
+                  child: ElevatedButton(
+                      onPressed: navigateToRegister,
+                      child: Text(
+                        'REGISTER',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
                       ),
-                    ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                    color: Colors.teal),
+
+                  ),
+                ),
               ],
             ),
             SizedBox(height: 20.0),

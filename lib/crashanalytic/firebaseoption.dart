@@ -29,12 +29,13 @@ class DefaultFirebaseOptions {
 
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyAHAsf51D0A407EklG1bs-5wA7EbyfNFg0',
-    appId: '1:448618578101:ios:3d7b3d90894e689eac3efc',
-    messagingSenderId: '448618578101',
+    apiKey: 'AIzaSyBtgRLU1HHwGhfproN1wdsMlFZ13FZY5e4',
+    /*appId: '1:448618578101:ios:3d7b3d90894e689eac3efc',*/
+    appId: '1:342873632170:ios:c4a4c5075635da1004cfd3',
+    messagingSenderId: '342873632170',
     projectId: ' "com.example.firebase"',
-    databaseURL: 'https://react-native-firebase-testing.firebaseio.com',
-    storageBucket: 'react-native-firebase-testing.appspot.com',
+    databaseURL: 'https://sample-ecfcb-default-rtdb.firebaseio.com',
+    storageBucket: 'sample-ecfcb.appspot.com',
   );
 
   // static const FirebaseOptions ios = FirebaseOptions(

@@ -52,7 +52,7 @@ class _LoginState extends State<Login> {
             title: Text('ERROR'),
             content: Text(errormessage),
             actions: <Widget>[
-              FlatButton(
+              ElevatedButton(
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
@@ -109,17 +109,16 @@ class _LoginState extends State<Login> {
                               onSaved: (input) => _password = input),
                         ),
                         SizedBox(height: 20),
-                        RaisedButton(
-                          padding: EdgeInsets.fromLTRB(70, 10, 70, 10),
-                          onPressed: login,
-                          child: Text('LOGIN',
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 20.0,
-                                  fontWeight: FontWeight.bold)),
-                          color: Colors.teal,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20.0),
+                        Padding(
+                          padding:EdgeInsets.fromLTRB(70, 10, 70, 10),
+                          child: ElevatedButton(
+                            onPressed: login,
+                            child: Text('LOGIN',
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 20.0,
+                                    fontWeight: FontWeight.bold)),
+
                           ),
                         )
                       ],

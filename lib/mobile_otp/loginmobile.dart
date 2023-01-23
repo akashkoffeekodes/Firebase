@@ -122,6 +122,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
             ),
+
+
+
+
             Container(
               margin: EdgeInsets.only(top: 40, right: 10, left: 10),
               child: TextField(
@@ -138,7 +142,17 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ),
             SizedBox(height: 50,),
+
+
+
+
+
+
             Text(_timerText,style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25)),
+
+
+
+
             SizedBox(height: 20,),
             Padding(
               padding: const EdgeInsets.all(30.0),
@@ -198,7 +212,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   } catch (e) {
                     print("Invalid otp");
                     FocusScope.of(context).unfocus();
-                    _scaffoldkey.currentState.showSnackBar(SnackBar(content: Text('invalid OTP')));
+                    // _scaffoldkey.currentState.showSnackBar(SnackBar(content: Text('invalid OTP')));
                   }
                 },
 
@@ -235,8 +249,8 @@ class _LoginScreenState extends State<LoginScreen> {
           Container(
             margin: EdgeInsets.all(10),
             width: double.infinity,
-            child: FlatButton(
-              color: Colors.teal,
+            child: ElevatedButton(
+
               onPressed: () {
                 _startTimer();
                initSmsListener();
